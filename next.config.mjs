@@ -1,9 +1,8 @@
 import withBundleAnalyzer from "@next/bundle-analyzer"
-import { type NextConfig } from "next"
 
 import { env } from "./env.mjs"
 
-const config: NextConfig = {
+const config = {
   reactStrictMode: true,
   logging: {
     fetches: {
