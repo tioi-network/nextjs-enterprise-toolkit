@@ -1,6 +1,6 @@
 import { Metadata } from "next"
-import { Button } from "components/Button/Button"
 import { getSession } from "@auth0/nextjs-auth0"
+import { Button } from "components/Button"
 
 export const metadata: Metadata = {
   title: "Next.js Enterprise Boilerplate",
