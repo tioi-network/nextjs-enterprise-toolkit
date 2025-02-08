@@ -19,6 +19,7 @@ const eslintIgnore = [
 
 const config = typescriptEslint.config(
   {
+    extends: ["next/core-web-vitals", "next/typescript"],
     ignores: eslintIgnore,
   },
   ...eslintPluginStorybook.configs["flat/recommended"],
@@ -39,7 +40,6 @@ const config = typescriptEslint.config(
       tailwindcss: {
         callees: ["classnames", "clsx", "ctl", "cn", "cva"],
       },
-
       "import/resolver": {
         typescript: true,
         node: true,
