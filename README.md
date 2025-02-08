@@ -12,7 +12,7 @@ Don't worry, with this template you will anyways get all the awesomeness you nee
 - 🛠️ **[Extremely strict TypeScript](https://www.typescriptlang.org/)** - With [`ts-reset`](https://github.com/total-typescript/ts-reset) library for ultimate type safety
 - 🚀 **[GitHub Actions](https://github.com/features/actions)** - Pre-configured actions for smooth workflows, including Bundle Size and performance stats
 - **[Bundle analyzer plugin](https://www.npmjs.com/package/@next/bundle-analyzer)** - Keep an eye on your bundle size
-- **[Jest](https://jestjs.io/)** and **[React Testing Library](https://testing-library.com/react)** - For rock-solid unit and integration tests
+- **[Vitest](https://vitest.dev)** and **[React Testing Library](https://testing-library.com/react)** - For rock-solid unit and integration tests
 - **[Playwright](https://playwright.dev/)** - Write end-to-end tests like a pro
 - **[Storybook](https://storybook.js.org/)** - Create, test, and showcase your components
 - **Smoke Testing** and **Acceptance Tests** - For confidence in your deployments
@@ -110,7 +110,7 @@ This boilerplate comes with various testing setups to ensure your application's 
 
 ### Running Tests
 
-- **Unit and integration tests**: Run Jest tests using `pnpm run test`
+- **Unit and integration tests**: Run Vitest tests using `pnpm run test`
 - **End-to-end tests (headless mode)**: Run Playwright tests in headless mode with `pnpm run e2e:headless`
 - **End-to-end tests (UI mode)**: Run Playwright tests with UI using `pnpm run e2e:ui`
 
@@ -154,7 +154,7 @@ export const FilledForm: Story = {
 
 ### Smoke Testing
 
-In this boilerplate, we use Storybook's out-of-the-box support for smoke testing to verify that components render correctly without any errors. Just run `pnpm run test-storybook` to perform smoke testing. Remember to write stories in JSX or TSX format only. Smoke testing and a lot of other functionalities dont work well with MDX stories.
+In this boilerplate, we use Storybook's out-of-the-box support for smoke testing to verify that components render correctly without any errors. Just run `pnpm run test-storybook` to perform smoke testing. Remember to write stories in JSX or TSX format only. Smoke testing and a lot of other functionalities don't work well with MDX stories.
 
 ## 🎨 Styling and Design System
 
