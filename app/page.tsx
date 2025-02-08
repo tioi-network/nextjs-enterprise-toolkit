@@ -1,6 +1,6 @@
 import { Metadata } from "next"
-import { getSession } from "@auth0/nextjs-auth0"
 import { Button } from "components/Button"
+import { getSession, withPageAuthRequired } from "@auth0/nextjs-auth0"
 
 export const metadata: Metadata = {
   title: "Next.js Enterprise Boilerplate",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
 }
 
-export default async function Web() {
+async function Web() {
   const session = await getSession()
 
   return (
@@ -27,7 +27,7 @@ export default async function Web() {
       <div className="max-w-(--breakpoint-xl) mx-auto grid px-4 py-8 text-center lg:py-16">
         <div className="mx-auto place-self-center">
           <h1 className="mb-4 max-w-2xl text-4xl font-extrabold leading-none tracking-tight dark:text-white md:text-5xl xl:text-6xl">
-            Next.js Enterprise Boilerplate
+            Next.js Enterprise Toolkit
           </h1>
           <p className="mb-6 max-w-2xl font-light text-gray-500 dark:text-gray-400 md:text-lg lg:mb-8 lg:text-xl">
             Jump start your enterprise project with our feature-packed, high-performance Next.js boilerplate! Experience
@@ -47,3 +47,5 @@ export default async function Web() {
     </section>
   )
 }
+
+export default withPageAuthRequired(Web)
