@@ -6,7 +6,7 @@ import "@testing-library/jest-dom"
 
 // Mock auth0 functions
 vi.mock("@auth0/nextjs-auth0", () => ({
-  withPageAuthRequired: (component: any) => component,
+  withPageAuthRequired: (component: JSX.Element) => component,
   getSession: vi.fn(),
 }))
 
