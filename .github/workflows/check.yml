@@ -28,14 +28,14 @@ jobs:
             - args: [--frozen-lockfile]
 
       - name: Lint check
-        run: pnpm run lint
+        run: pnpm lint
       - name: Format check
-        run: pnpm run prettier
+        run: pnpm prettier
       - name: Unit & Integration tests
-        run: pnpm run test
+        run: pnpm test
       - name: Smoke & Acceptance tests
         run: |
-          pnpm run build-storybook --quiet
+          pnpm build-storybook --quiet
           pnpm playwright install
           pnpm dlx concurrently -k -s first -n "SB,TEST" -c "magenta,blue" \
             "pnpm dlx http-server storybook-static --port 6006 --silent" \

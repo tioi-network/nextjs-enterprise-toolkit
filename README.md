@@ -59,7 +59,7 @@ pnpm i --frozen-lockfile
 3. Run the development server:
 
 ```bash
-pnpm run dev
+pnpm dev
 ```
 
 4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -97,7 +97,7 @@ The following scripts are available in the `package.json`:
 The `coupling-graph` script is a useful tool that helps visualize the coupling and connections between the project's internal modules. It's built using the [Madge](https://github.com/pahen/madge) library. To generate the graph, simply run the following command:
 
 ```bash
-pnpm run coupling-graph
+pnpm coupling-graph
 ```
 
 This will create a `graph.svg` file, which contains a graphical representation of the connections between our components. You can open the file with any SVG-compatible viewer.
@@ -110,9 +110,9 @@ This boilerplate comes with various testing setups to ensure your application's 
 
 ### Running Tests
 
-- **Unit and integration tests**: Run Vitest tests using `pnpm run test`
-- **End-to-end tests (headless mode)**: Run Playwright tests in headless mode with `pnpm run e2e:headless`
-- **End-to-end tests (UI mode)**: Run Playwright tests with UI using `pnpm run e2e:ui`
+- **Unit and integration tests**: Run Vitest tests using `pnpm test`
+- **End-to-end tests (headless mode)**: Run Playwright tests in headless mode with `pnpm e2e:headless`
+- **End-to-end tests (UI mode)**: Run Playwright tests with UI using `pnpm e2e:ui`
 
 <img width="1392" alt="image" src="https://user-images.githubusercontent.com/28964599/233666655-93b7d08b-2fd8-406a-b43c-44d4d96cf387.png">
 
