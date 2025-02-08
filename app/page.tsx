@@ -1,6 +1,6 @@
 import { Metadata } from "next"
 import { Button } from "components/Button/Button"
-import Link from "next/link"
+import { getSession } from "@auth0/nextjs-auth0"
 
 export const metadata: Metadata = {
   title: "Next.js Enterprise Boilerplate",
@@ -19,7 +19,9 @@ export const metadata: Metadata = {
   },
 }
 
-export default function Web() {
+export default async function Web() {
+  const session = await getSession()
+
   return (
     <section className="bg-white dark:bg-gray-900">
       <div className="max-w-(--breakpoint-xl) mx-auto grid px-4 py-8 text-center lg:py-16">
@@ -28,11 +30,18 @@ export default function Web() {
             Next.js Enterprise Boilerplate
           </h1>
           <p className="mb-6 max-w-2xl font-light text-gray-500 dark:text-gray-400 md:text-lg lg:mb-8 lg:text-xl">
-            Jumpstart your enterprise project with our feature-packed, high-performance Next.js boilerplate! Experience
+            Jump start your enterprise project with our feature-packed, high-performance Next.js boilerplate! Experience
             rapid UI development, AI-powered code reviews, and an extensive suite of tools for a smooth and enjoyable
             development process.
           </p>
-          <Button href="/api/auth/login">Login</Button>
+          {session?.user ? (
+            <section>
+              <h2 className="">Welcome, {session.user.given_name}!</h2>
+              <Button href="/api/auth/logout">Logout</Button>
+            </section>
+          ) : (
+            <Button href="/api/auth/login">Login</Button>
+          )}
         </div>
       </div>
     </section>
