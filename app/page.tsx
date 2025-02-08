@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 import { Button } from "components/Button/Button"
+import Link from "next/link"
 
 export const metadata: Metadata = {
   title: "Next.js Enterprise Boilerplate",
@@ -31,9 +32,7 @@ export default function Web() {
             rapid UI development, AI-powered code reviews, and an extensive suite of tools for a smooth and enjoyable
             development process.
           </p>
-          <Button href="https://github.com/Blazity/next-enterprise" className="mr-3">
-            Get started
-          </Button>
+          <Button href="/api/auth/login">Login</Button>
         </div>
       </div>
     </section>
