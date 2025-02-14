@@ -1,13 +1,13 @@
 import { Metadata } from "next"
-import { getSession, withPageAuthRequired } from "@auth0/nextjs-auth0"
 import { Button } from "@/components/Button"
+import { auth0 } from "@/lib/auth0"
 
 export const metadata: Metadata = {
   title: "Next.js Enterprise Boilerplate",
 }
 
 async function RootPage() {
-  const session = await getSession()
+  const session = await auth0.getSession()
 
   return (
     <section className="bg-white dark:bg-gray-900">
@@ -35,4 +35,4 @@ async function RootPage() {
   )
 }
 
-export default withPageAuthRequired(RootPage)
+export default RootPage
