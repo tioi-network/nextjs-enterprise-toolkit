@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test"
 
-test("require authentication", async ({ page }) => {
+test("renders the home page", async ({ page }) => {
   await page.goto("./")
-  await expect(page).toHaveTitle(/Log in/)
+  await expect(page).toHaveTitle(/Next.js Enterprise Boilerplate/)
 })
