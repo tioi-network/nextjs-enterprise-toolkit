@@ -1,7 +1,7 @@
-import eslintPluginTailwindcss from "eslint-plugin-tailwindcss"
 import eslintPluginNext from "@next/eslint-plugin-next"
 import eslintPluginImport from "eslint-plugin-import"
 import eslintPluginStorybook from "eslint-plugin-storybook"
+import eslintPluginTailwindcss from "eslint-plugin-tailwindcss"
 import typescriptEslint from "typescript-eslint"
 import * as fs from "fs"
 
@@ -19,7 +19,6 @@ const eslintIgnore = [
 
 const config = typescriptEslint.config(
   {
-    extends: ["next/core-web-vitals", "next/typescript"],
     ignores: eslintIgnore,
   },
   ...eslintPluginStorybook.configs["flat/recommended"],
