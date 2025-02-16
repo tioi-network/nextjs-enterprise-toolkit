@@ -1,13 +1,13 @@
 import { Metadata } from "next"
-import { getSession, withPageAuthRequired } from "@auth0/nextjs-auth0"
 import { Button } from "@/components/Button"
+import { auth0 } from "@/lib/auth0"
 
 export const metadata: Metadata = {
   title: "Next.js Enterprise Boilerplate",
 }
 
 async function RootPage() {
-  const session = await getSession()
+  const session = await auth0.getSession()
 
   return (
     <section className="bg-white dark:bg-gray-900">
@@ -24,10 +24,10 @@ async function RootPage() {
           {session?.user ? (
             <section>
               <h2 className="">Welcome, {session.user.given_name}!</h2>
-              <Button href="/api/auth/logout">Logout</Button>
+              <Button href="/auth/logout">Logout</Button>
             </section>
           ) : (
-            <Button href="/api/auth/login">Login</Button>
+            <Button href="/auth/login">Login</Button>
           )}
         </div>
       </div>
@@ -35,4 +35,4 @@ async function RootPage() {
   )
 }
 
-export default withPageAuthRequired(RootPage)
+export default RootPage
