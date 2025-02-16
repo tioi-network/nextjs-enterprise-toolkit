@@ -24,10 +24,10 @@ async function RootPage() {
           {session?.user ? (
             <section>
               <h2 className="">Welcome, {session.user.given_name}!</h2>
-              <Button href="/api/auth/logout">Logout</Button>
+              <Button href="/auth/logout">Logout</Button>
             </section>
           ) : (
-            <Button href="/api/auth/login">Login</Button>
+            <Button href="/auth/login">Login</Button>
           )}
         </div>
       </div>
